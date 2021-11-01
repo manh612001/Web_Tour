@@ -6,7 +6,7 @@ function getGet($key){
         $value = $_GET[$key];
         $value = fixSqlInjection($value);
     }
-    return $value;
+    return trim($value);
 }
 function getPOST($key){
     $value = '';
@@ -14,7 +14,7 @@ function getPOST($key){
         $value = $_POST[$key];
         $value = fixSqlInjection($value);
     }
-    return $value;
+    return trim($value);
 }
 function getRequest($key){
     $value = '';
@@ -22,7 +22,7 @@ function getRequest($key){
         $value = $_REQUEST[$key];
         $value = fixSqlInjection($value);
     }
-    return $value;
+    return trim($value);
 }
 function getCookie($key){
     $value = '';
@@ -30,7 +30,7 @@ function getCookie($key){
         $value = $_COOKIE[$key];
         $value = fixSqlInjection($value);
     }
-    return $value;
+    return trim($value);
 }
 function fixSqlInjection($sql){
     $sql = str_replace('\\','\\\\',$sql);

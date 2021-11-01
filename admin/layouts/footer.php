@@ -1,4 +1,5 @@
-      <!-- END --><script src="index.js"></script>
 </main>
-      </body>
+        </div>
+    </div>
+</body>
 </html>

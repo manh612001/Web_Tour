@@ -39,77 +39,100 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css"
     />
-   
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <title><?=$title?></title>
     
     <style>
-      .nav {
-        position: relative;
-        top: 60px;
+      *{
+          margin: 0;
+          padding:0;
+      }
+      .row {
+        width: 100vw;
+      }
+      .col-md-2 {
+        padding:0 0 0 10px;
+        height:1000px;
       }
       .fas {
         margin: 0 10px 0 0;
+        font-size: 20px;
       }
-      .row{
-        margin: 50px 0 0 0;
-      }
-      .row h2{
-        text-align:center;
-      }
-      table{
-        position: relative;
-        left:18%
+      .col-md-10 {
+        padding:0;
       }
       
+      li a {
+        color: #00a8ff;
+      }
+      span {
+        margin: auto;
+      }
+      .navbar-brand {
+        margin: auto;
+      }
+      #search {
+        width: 80%;
+      }
+      #logout {
+        
+        display:block;
+        margin:auto;
+        
+      }
+      #logout,.nav-item a:hover{
+        color:white;
+      }
+      #nav-main h2 {
+        text-align: center;
+      }
+      .dk {
+        margin: 0 0 10px 0;
+      }
+
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-dark fixed-top bg-success flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#"><span style="color:white">Black</span><span style="color:black">White</span></a>
-      <input
-        class="form-control form-control-dark w-100 "
-        type="text"
-        placeholder="Tìm kiếm"
-        aria-label="Search"
-      />
-      <?php
-        foreach ($data as $value) {
-          echo '<span class="text-gray">'.$value['fullname'].'</span>';
-        }
-      ?>
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap btn btn-secondary">
+  <div class="row">
+        <div class="col-md-2 bg-dark ">
+          <nav class="navbar navbar-expand-sm  navbar-dark">
+            <h1 class="navbar-brand">BlackWhite</h1>
+          </nav>
+          <ul class="nav flex-column ">
+          <li class="nav-item">
+            <a class="nav-link" href="<?=$Url?>"><i class="fas fa-home"></i>Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?=$Url?>tour"><i class="fas fa-plane-departure"></i>Tour</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?=$Url?>category"><i class="fas fa-list-alt"></i> Danh mục sản phẩm</a>
+          </li>
+  
+          <li class="nav-item" id ="user">
+            <a class="nav-link " href="<?=$Url?>order"><i class="fas fa-calendar-check"></i>  Quản lý tour</a>
+          </li>
+          <li class="nav-item user">
+            <a class="nav-link"  href="<?=$Url?>user"><i class="fas fa-user"></i> Quản lý người dùng</a>
+          </li>
+          
+        <button class="nav-item text-nowrap btn btn-outline-primary btn-sm " id= "logout">
           <a class="nav-link" href="<?=$Url?>authen/logout.php"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a>
-        </li>
+        </button>
       </ul>
-    </nav>
-    <ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link" href="<?=$Url?>"><i class="fas fa-home"></i>Dashboard</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="<?=$Url?>tour"><i class="fas fa-plane-departure"></i>Tour</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="<?=$Url?>category"><i class="fas fa-list-alt"></i>Danh mục sản phẩm</a>
-  </li>
-  
-  <li class="nav-item" id ="user">
-    <a class="nav-link " href="<?=$Url?>order"><i class="fas fa-calendar-check"></i>Quản lý tour</a>
-  </li>
-  
-  <?php
-  $bool = 0;
-    foreach ($data as $value) {
-      if($value['role_id']==1)
-        echo'<li class="nav-item user">
-        <a class="nav-link"  href=""><i class="fas fa-user"></i>Quản lý người dùng</a>
-      </li>';
-    }
-  ?>
-  
-</ul>
-<main>
+        </ul>
+        </div>
+        <div class="col-md-10 bg-light">
+          <nav class="navbar navbar-expand-sm bg-light navbar-light right">
+            
+            <input class="form-control" id="search" type="text" placeholder="Tìm kiếm...">
+            <?php
+              foreach ($data as $value) {
+                echo '<span class="text-gray">'.$value['fullname'].'</span>';
+              }
+            ?>
+          </nav>
+          <main>
