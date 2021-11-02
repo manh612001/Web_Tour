@@ -24,10 +24,10 @@ function executeResult($sql, $isSingle = false)
 
     $resultset = mysqli_query($conn, $sql);
     if ($isSingle) {
-        $data = mysqli_fetch_array($resultset);
+        $data = mysqli_fetch_array($resultset, 1);
     } else {
         $data = [];
-        while (($row = mysqli_fetch_array($resultset)) != null) {
+        while (($row = mysqli_fetch_array($resultset, 1)) != null) {
             $data[] = $row;
         }
     }

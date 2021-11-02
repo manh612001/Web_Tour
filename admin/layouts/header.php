@@ -55,11 +55,16 @@
       }
       .col-md-2 {
         padding:0 0 0 10px;
-        height:1000px;
+        height:1200px;
+        
       }
-      .fas {
-        margin: 0 10px 0 0;
+      .fas { 
         font-size: 20px;
+        text-align:center;
+      }
+      .icon{
+        margin-right:10px;
+        
       }
       .col-md-10 {
         padding:0;
@@ -92,7 +97,7 @@
       .dk {
         margin: 0 0 10px 0;
       }
-
+      
     </style>
   </head>
   <body>
@@ -103,20 +108,20 @@
           </nav>
           <ul class="nav flex-column ">
           <li class="nav-item">
-            <a class="nav-link" href="<?=$Url?>"><i class="fas fa-home"></i>Dashboard</a>
+            <a class="nav-link" href="<?=$Url?>"><i class="fas fa-home icon"></i>Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?=$Url?>tour"><i class="fas fa-plane-departure"></i>Tour</a>
+            <a class="nav-link" href="<?=$Url?>tour"><i class="fas fa-plane-departure icon"></i>Tour</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?=$Url?>category"><i class="fas fa-list-alt"></i> Danh mục sản phẩm</a>
+            <a class="nav-link" href="<?=$Url?>category"><i class="fas fa-list-alt icon"></i> Danh mục Tour</a>
           </li>
   
           <li class="nav-item" id ="user">
-            <a class="nav-link " href="<?=$Url?>order"><i class="fas fa-calendar-check"></i>  Quản lý tour</a>
+            <a class="nav-link " href="<?=$Url?>order"><i class="fas fa-calendar-check icon"></i>  Quản lý tour</a>
           </li>
           <li class="nav-item user">
-            <a class="nav-link"  href="<?=$Url?>user"><i class="fas fa-user"></i> Quản lý người dùng</a>
+            <a class="nav-link"  href="<?=$Url?>user"><i class="fas fa-user icon"></i> Quản lý người dùng</a>
           </li>
           
         <button class="nav-item text-nowrap btn btn-outline-primary btn-sm " id= "logout">

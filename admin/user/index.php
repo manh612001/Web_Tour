@@ -2,7 +2,7 @@
 
 $title = 'Quản lý người dùng';
 $Url = '../';
-require_once '../layouts/header.php';
+require_once ('../layouts/header.php');
 
 require_once 'register.php';
 $sql = " select user.*,role.name as role_name from user left join role on user.role_id = role.id ";
@@ -18,7 +18,7 @@ $data1 = executeResult($sql1);
             <?php
 foreach ($data1 as $value) {
     if ($value['role_id'] == 1) {
-        echo '<button type="button" class="btn btn-primary dk" data-toggle="modal" data-target="#myModal">Đăng ký tài khoản</button>';
+        echo '<button type="button" class="btn btn-success dk" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus"></i></button>';
     }
 }
 
@@ -72,7 +72,7 @@ foreach ($data1 as $value) {
   </div>
 </div>
         </nav >
-        <table class="table table-border table-hover ">
+        <table class="table table-border table-hover table-bordered ">
             <thead>
                 <tr>
                     <th>STT</th>
@@ -80,8 +80,8 @@ foreach ($data1 as $value) {
                     <th>Email</th>
                     <th>SĐT</th>
                     <th>Quyền</th>
-                    <th style="width:50px"></th>
-                    <th style="width:50px"></th>
+                    <th style="width:50px">Sửa</th>
+                    <th style="width:50px">Xóa</th>
                 </tr>
             </thead>
             <tbody>
@@ -94,18 +94,19 @@ foreach ($data1 as $value) { // tài khoản admin
         $data = executeResult($sql);
         $index = 0;
         foreach ($data as $item) {
+            $id=$item['id'];
             echo '<tr>
                                 <td>' . (++$index) . '</td>
                                 <td>' . $item['fullname'] . '</td>
                                 <td>' . $item['email'] . '</td>
                                 <td>' . $item['phone_number'] . '</td>
                                 <td>' . $item['role_name'] . '</td>
-                                <td style="width:50px"><button type="button" data-toggle="modal" data-target="#FormRes" onclick ="Edit(' . $item['id'] . ')" class="btn btn-warning">Sửa</button></td>
-
-                                <td style="width:50px"><button type="button" onclick ="Delete(' . $item['id'] . ')"class="btn btn-danger">Xóa</button></td>
-
-                              </tr>
-                              ';
+                                <td style="width:50px"><a href ="edit.php?id='.$item['id'].'" style="text-decoration:none"><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button></a></td>';
+                                if($item['id']!=$user['id']&&$item['role_id']!=1){
+                                  echo'<td style="width:50px"><button type="button" onclick ="Delete('. $item['id'].')"class="btn btn-danger"><i class="fas fa-trash-alt"></i></button></td>';
+                                }
+                                echo'</tr>';
+                                
         }
 
     } else { // tài khoản user
@@ -120,7 +121,7 @@ foreach ($data1 as $value) { // tài khoản admin
                                 <td>' . $item['phone_number'] . '</td>
                                 <td>' . $item['role_name'] . '</td>
 
-                                <td style="width:50px"><button type="button" class="btn btn-warning">Sửa</button></td>
+                                <td style="width:50px"><a href ="edit.php?id='.$item['id'].'" style="text-decoration:none"><button type="button" class="btn btn-warning">Sửa</button></a></td>
 
                               </tr>';
 
@@ -143,8 +144,17 @@ foreach ($data1 as $value) { // tài khoản admin
       return false;
     }
     return true;
+  };
+  function Delete(id){
+    option= confirm('Bạn có muốn xóa tài khoản này không?');
+    if(!option) return;
+    $.post('api.php',{
+      'id': id,
+      'action':'delete'
+    },function(data){
+      location.reload();
+    })
   }
-
 </script>
 
 <?php
