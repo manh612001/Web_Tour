@@ -21,7 +21,7 @@ function Delete(){
 	$data = executeResult($sql,true);
     $total = $data['total'];
 	if($total > 0) {
-		echo 'Danh mục đang chứa danh sách các tour, không được xoá!!!';
+		echo 'Danh mục này đang chứa danh sách các tour không thể xóa!';
 		die();
 	}
     $sql1="delete from category where id = $id";

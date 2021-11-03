@@ -1,5 +1,5 @@
 <?php
-  $title = 'Thêm/Sửa';
+  $title = 'Thêm tour';
   $Url = '../';
   require_once ('../layouts/header.php');
   $sql = "select * from Category";
@@ -7,8 +7,8 @@
  
 ?>
 <div class="container">
-    <h2 style="text-align:center">Thêm/Sửa</h2>
-    <form method="post">
+    <h2 style="text-align:center">Thêm tour</h2>
+    <form method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label>Tiêu đề</label>
             <input type="text" class="form-control"  id="title" name="title">
@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
             <label>Hình ảnh</label>
-            <input type="text" class="form-control" id="thumbnail" name="thumbnail" >
+            <input type="file" class="form-control" id="thumbnail" name="thumbnail"accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/* >
         </div>
         <div class="form-group">
             <label>Giá tiền</label>
@@ -51,13 +51,14 @@
     
 </div>
 <?php
+  
     if(!empty($_POST)) {
         $id = getPOST('id');
         $title = getPOST('title');
         $price = getPOST('price');
         $discount = getPOST('discount');
         
-        $thumbnail = getPOST('thumbnail');
+        $thumbnail = uploadFile('thumbnail');
     
         $description = getPOST('description');
         $category_id = getPOST('category_id');
@@ -71,6 +72,7 @@
         die();
         
     }
+    
 ?>
 <?php
   require_once ('../layouts/footer.php');

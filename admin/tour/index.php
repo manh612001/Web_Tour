@@ -1,7 +1,7 @@
 <?php
     $title = 'Tour';
     $Url = '../';
-    require_once('../layouts/header.php');
+    require_once('../layouts/header.php');  
     $sql = "select tour.*,category.name as category_name from tour left join category on tour.category_id = category.id";
     $data = executeResult($sql);
 ?>
@@ -16,7 +16,7 @@
     <table class="table table-hover table-bordered">
         <thead>
             <tr>
-                <th>STT</th>
+                <th style="width:50px">STT</th>
                 <th>Tên tour</th>
                 <th>Hình ảnh</th>
                 <th>Giá</th>
@@ -31,9 +31,9 @@
                 foreach($data as $value){
                     echo'
                         <tr>
-                            <td>'.(++$index).'</td>
+                            <td style="width:50px">'.(++$index).'</td>
                             <td>'.$value['title'].'</td>
-                            <td><img src="'.$value['thumbnail'].'" style="width:100px"></td>
+                            <td><img src="'.Url($value['thumbnail']).'" style="width:100px"></td>
                             <td>'.number_format($value['discount']).'</td>
                             <td>'.$value['category_name'].'</td>
                             <td style="width:50px"><a href="edit.php?id='.$value['id'].'"><button class="btn btn-primary"><i class="fas fa-edit"></i></button</a></td>

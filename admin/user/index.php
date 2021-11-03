@@ -5,7 +5,7 @@ $Url = '../';
 require_once ('../layouts/header.php');
 
 require_once 'register.php';
-$sql = " select user.*,role.name as role_name from user left join role on user.role_id = role.id ";
+$sql = " select user.*,role.name as role_name from user inner join role on user.role_id = role.id ";
 $data = executeResult($sql);
 $rs = $user['id'];
 $sql1 = "select user.* from user where id = '$rs'";
@@ -18,7 +18,7 @@ $data1 = executeResult($sql1);
             <?php
 foreach ($data1 as $value) {
     if ($value['role_id'] == 1) {
-        echo '<button type="button" class="btn btn-success dk" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus"></i></button>';
+        echo '<button type="button" class="btn btn-success dk" data-toggle="modal" data-target="#myModal"><i class="fas fa-plus" style="margin-right:5px;"></i>Thêm</button>';
     }
 }
 
@@ -75,7 +75,7 @@ foreach ($data1 as $value) {
         <table class="table table-border table-hover table-bordered ">
             <thead>
                 <tr>
-                    <th>STT</th>
+                    <th style="width:50px">STT</th>
                     <th>Họ tên</th>
                     <th>Email</th>
                     <th>SĐT</th>
@@ -96,7 +96,7 @@ foreach ($data1 as $value) { // tài khoản admin
         foreach ($data as $item) {
             $id=$item['id'];
             echo '<tr>
-                                <td>' . (++$index) . '</td>
+                                <td style="width:50px">' . (++$index) . '</td>
                                 <td>' . $item['fullname'] . '</td>
                                 <td>' . $item['email'] . '</td>
                                 <td>' . $item['phone_number'] . '</td>
@@ -115,7 +115,7 @@ foreach ($data1 as $value) { // tài khoản admin
         $index = 0;
         foreach ($data as $item) {
             echo '<tr>
-                                <td>' . (++$index) . '</th>
+                                <td style="width:50px">' . (++$index) . '</th>
                                 <td>' . $item['fullname'] . '</td>
                                 <td>' . $item['email'] . '</th>
                                 <td>' . $item['phone_number'] . '</td>

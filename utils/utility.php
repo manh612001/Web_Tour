@@ -55,3 +55,23 @@ function getToken(){
     }
     return null;
 }
+function uploadFile($key, $rootPath = "../../") {
+    if(!isset($_FILES[$key]) || !isset($_FILES[$key]['name']) || $_FILES[$key]['name'] == '') {
+        return '';
+    }
+
+    $pathTemp = $_FILES[$key]["tmp_name"];
+
+    $filename = $_FILES[$key]['name'];
+    //filename -> remove special character, ..., ...
+
+    $newPath="upload/".$filename;
+
+    move_uploaded_file($pathTemp, $rootPath.$newPath);
+
+    return $newPath;
+}
+function Url($thumbnail, $Url = "../../") { // thêm đường dẫn folder $Url
+
+    return $Url.$thumbnail;
+}

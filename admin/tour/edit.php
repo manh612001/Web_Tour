@@ -6,7 +6,7 @@
      $categoryItems = executeResult($sql);
 ?>
 <div class="container">
-    <h2 style="text-align:center">Thêm/Sửa</h2>
+    <h2 style="text-align:center">Sửa thông tin tour</h2>
     <form method="post">
         <div class="form-group">
             <label>Tiêu đề</label>
@@ -51,12 +51,12 @@
 </div>
 <?php
     if(!empty($_POST)) {
-        $id = getPOST('id');
+        $id = getGet('id'); // lấy id trên đường dẫn Url
         $title = getPOST('title');
         $price = getPOST('price');
         $discount = getPOST('discount');
         
-        $thumbnail = getPOST('thumbnail');
+        $thumbnail = uploadFile('thumbnail');
     
         $description = getPOST('description');
         $category_id = getPOST('category_id');
@@ -68,8 +68,8 @@
 		}
 		
 		execute($sql);
-
-		header('Location: index.php');
+        echo"<script>alert('Sửa thành công!')</script>";
+		header('Location: ./');
 		die();
     }
 ?>

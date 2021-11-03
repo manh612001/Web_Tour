@@ -10,6 +10,7 @@
 		//insert
 		$sql = "insert into category(name) values ('$name')";
 		execute($sql);
+		
 	}
 }
     

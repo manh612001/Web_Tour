@@ -97,7 +97,12 @@
       .dk {
         margin: 0 0 10px 0;
       }
-      
+      .jumbotron{
+        padding:10px;
+      }
+      p{
+        margin-bottom:5px;
+      }
     </style>
   </head>
   <body>
@@ -114,9 +119,11 @@
             <a class="nav-link" href="<?=$Url?>tour"><i class="fas fa-plane-departure icon"></i>Tour</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="<?=$Url?>other"><i class="fas fa-hotel icon"></i>Khách sạn</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="<?=$Url?>category"><i class="fas fa-list-alt icon"></i> Danh mục Tour</a>
           </li>
-  
           <li class="nav-item" id ="user">
             <a class="nav-link " href="<?=$Url?>order"><i class="fas fa-calendar-check icon"></i>  Quản lý tour</a>
           </li>
@@ -125,7 +132,7 @@
           </li>
           
         <button class="nav-item text-nowrap btn btn-outline-primary btn-sm " id= "logout">
-          <a class="nav-link" href="<?=$Url?>authen/logout.php"><i class="fas fa-sign-out-alt"></i>Đăng xuất</a>
+          <a class="nav-link" href="<?=$Url?>authen/logout.php"><i class="fas fa-sign-out-alt" style="margin-right:5px;"></i>Đăng xuất</a>
         </button>
       </ul>
         </ul>

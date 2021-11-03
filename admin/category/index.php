@@ -4,6 +4,7 @@
     require_once('../layouts/header.php');
     
     require_once('save.php');
+    
     $name=$id = '';
     if(isset($_GET['id'])) {
 		$id = getGet('id');
@@ -32,7 +33,7 @@
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
-                    <th>STT</th>
+                    <th style="width:50px">STT</th>
                     <th>Tên danh mục</th>
                     <th style="width:50px">Sửa</th>
                     <th style="width:50px">Xóa</th>
@@ -44,7 +45,7 @@
                     foreach($data as $value){
                         echo '
                             <tr>
-                                <td>'.(++$index).'</td>
+                                <td style="width:50px">'.(++$index).'</td>
                                 <td>'.$value['name'].'</td>
                                 <td><a href="?id='.$value['id'].'"><button class="btn btn-primary"><i class="fas fa-edit"></i></button></a></td>
                                 <td><a ><button class="btn btn-danger" onclick="Delete('.$value['id'].')"><i class="fas fa-trash-alt"></i></button></a></td>

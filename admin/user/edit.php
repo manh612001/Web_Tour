@@ -33,7 +33,7 @@
   />
   <div class="modal-footer justify-content-center">
     <button type="button" class="btn btn-success" data-dismiss="modal">
-      <i class="fas fa-arrow-left"></i><a href="<?=$Url?>user" style="color:white;text-decoration:none">Quay lại</a>
+      <i class="fas fa-arrow-left" style="margin-right:5px;"></i><a href="<?=$Url?>user" style="color:white;text-decoration:none">Quay lại</a>
     </button>
       
     <button type="submit" class="btn btn-success"><i class="fas fa-user-edit"></i>
