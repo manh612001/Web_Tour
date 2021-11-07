@@ -4,24 +4,20 @@
     $id = getGet('id');
     $sql1= "select * from tour  where category_id= $id ";
     $data1 = executeResult($sql1);
-    $query = "select count(*) as total from tour where id = $id";
+    $query = "select count(*) as total, category.name as name from tour  inner join category on tour.category_id = category.id where tour.category_id = $id";
     $rs = executeResult($query);
-    $total = 0;
-    foreach($rs as $value){
-      $total = $value['total'];
-    }
-    if($total<0){
-      echo'<h2 style="margin-top:100px;">Không tìm thấy kết quả!</h2>';
-    }
+    $total = 0;$name ='';
+    
     
 ?>
 <div class="container" >
 <?php
     foreach($rs as $value){
       $total = $value['total'];
+      $name = $value['name'];
     }
-    if($total<0){
-      echo'<h2 style="margin-top:100px;">Không tìm thấy kết quả!</h2>';
+    if($total<=0){
+      echo'<h2 style="margin-top:100px;">Không tìm thấy kết quả cho: '.$name.'!</h2>';
     }?>
 <div class="row" style="margin-top:100px;">
           <?php

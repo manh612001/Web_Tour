@@ -47,7 +47,7 @@
     $id = getGet('id');
     $query = "select * from tour where id = $id";
     $rs = executeResult($query);
-    if(!empty($_POST)){
+    if(!empty($_POST['sdt'])&&!empty($_POST['name'])){
         $name = getPOST('name');
         $email = getPOST('email');
         $sdt = getPOST('sdt');

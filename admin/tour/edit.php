@@ -13,7 +13,9 @@
          $title = $value['title'];
          $price = $value['price'];
          $discount = $value['discount'];
+         $day = $value['day'];
          $des = $value['description'];
+         
      }
      
 ?>
@@ -51,6 +53,10 @@
             <input type="text" class="form-control"  id="discount" name="discount" value="<?=$discount?>">
         </div>
         <div class="form-group">
+            <label>Thời gian</label>
+            <input type="text" class="form-control"  id="day" name="day" value="<?=$day?>">
+        </div>
+        <div class="form-group">
             <label>Mô tả</label>
             <textarea class="form-control" name="description" id="description" value="" cols="30" rows="10" value ="<?=$des?>"></textarea>
         </div>
@@ -67,17 +73,17 @@
         $title = getPOST('title');
         $price = getPOST('price');
         $discount = getPOST('discount');
-        
+        $day = getPOST('day');
         $thumbnail = uploadFile('thumbnail');
         
         $description = getPOST('description');
         $category_id = getPOST('category_id');
         $creat_at = $update_at = date('Y-m-d H:s:i');
-        echo"<script>alert('$thumbnail')</script>";
+        
         if($thumbnail != '') {
-			$sql = "update tour set thumbnail = '$thumbnail', title = '$title', price = $price, discount = $discount, description = '$description', update_at = '$updated_at', category_id = '$category_id' where id = $id";
+			$sql = "update tour set thumbnail = '$thumbnail', title = '$title', price = $price, discount = $discount,day = '$day', description = '$description', update_at = '$updated_at', category_id = '$category_id' where id = $id";
 		} else {
-			$sql = "update tour set title = '$title', price = $price, discount = $discount, description = '$description', update_at = '$update_at', category_id = '$category_id' where id = $id";
+			$sql = "update tour set title = '$title', price = $price, discount = $discount,day = '$day', description = '$description', update_at = '$update_at', category_id = '$category_id' where id = $id";
 		}
 		
 		execute($sql);

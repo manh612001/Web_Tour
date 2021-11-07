@@ -40,6 +40,10 @@
             <input type="text" class="form-control"  id="discount" name="discount">
         </div>
         <div class="form-group">
+            <label>Thời gian</label>
+            <input type="text" class="form-control"  id="day" name="day">
+        </div>
+        <div class="form-group">
             <label>Mô tả</label>
             <textarea class="form-control" name="description" id="description" value="" cols="30" rows="10"></textarea>
         </div>
@@ -57,7 +61,7 @@
         $title = getPOST('title');
         $price = getPOST('price');
         $discount = getPOST('discount');
-        
+        $day = getPOST('day');
         $thumbnail = uploadFile('thumbnail');
     
         $description = getPOST('description');
@@ -66,7 +70,7 @@
     
         
             //insert
-        $sql = "insert into tour(category_id,title,price,discount,thumbnail,description,creat_at,update_at) values ('$category_id','$title','$price','$discount','$thumbnail','$description','$creat_at','$update_at')";
+        $sql = "insert into tour(category_id,title,price,discount,thumbnail,day,description,creat_at,update_at) values ('$category_id','$title','$price','$discount','$thumbnail','$day','$description','$creat_at','$update_at')";
         execute($sql);
         echo"<script>alert('Thêm/Sửa thành công')</script>";
         die();

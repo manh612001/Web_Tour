@@ -5,11 +5,7 @@
     require_once('./utils/utility.php');
     $sql = "select * from category ";
     $data =  executeResult($sql);
-    if(!empty($_POST)){
-      $sdt = getPOST('search');
-      $query = "select * from order_tour where phone_number = $sdt";
-      $rs = executeResult($query);
-    }
+    
     
     
 ?>
@@ -40,7 +36,12 @@
     z-index: -1;
     height: 550px;
 }
-
+.icon{
+  padding:20px 20px 0 20px;
+}
+.mb-4 a{
+  border-radius:50%;
+}
 .card{
   width: 98%;
 }
@@ -52,7 +53,7 @@
 
 
 nav{
-  background:rgba(0,0,0,.2);
+  background:rgba(7,63,96,1);
 }
 
     </style>
@@ -84,64 +85,18 @@ nav{
               <a href="" class="nav-link">Khách sạn</a>
             </li>
             <li class="nav-item">
-              <a data-toggle="collapse" data-target="#demo" class="nav-link">Tra cứu Booking</a>
+              <a href="check.php" class="nav-link">Tra cứu Booking</a>
             </li>
-            <div id="demo" class="collapse">
-              <form method="post">
-                <input type="tel" id ="search" name = "search" pattern="[0-9]{9,12}" placeholder="nhập số điện thoại:"style="margin:10px 0 10px 10px;">
-                <a type="button" data-toggle="modal" data-target="#myModal"><i class="fas fa-search" style="position:relative;left:-35px;"></i></a>
-              </form>
-            </div>
+            
           </ul>
         </div>
         
       </nav>
-      <?php
-          $name ;
-          if(!empty($_POST)){
-            foreach($rs as $value){
-              $name = $value['fullname'];
-            }
-          }
-        ?>
-      <div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
+     
+    
 
       <!-- Modal body -->
-      <div class="modal-body">
-      <?php
-          $name ;
-          if(!empty($_POST)){
-            foreach($rs as $value){
-              echo'
-              <p>Tên: '.$value['fullname'].'</p>
-              <p>Email: '.$value['email'].'</p>
-              <p>Note: '.$value['note'].'</p>
-              <p>Ngày đi: '.$value['date'].'</p>
-              <p>Tổng tiền: '.number_format($value['total_money']).'đ</p>';
-              if($value['status']==0){
-                echo'<p>Trạng thái:<span class="text-warning"> Đang chờ xử lý</span><p>';
-              }
-              else{
-                echo'<p>Trạng thái:<span class="text-success"> Thành công</span><p>';
-              }
-              
-            }
-          }
-        ?>
-      </div>
 
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
 
     </div>
   </div>
