@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
             <label>Hình ảnh</label>
-            <input type="file" class="form-control" id="thumbnail" name="thumbnail"accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/* >
+            <input type="file" class="form-control" id="thumbnail" name="thumbnail"accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*" >
         </div>
         <div class="form-group">
             <label>Giá tiền</label>

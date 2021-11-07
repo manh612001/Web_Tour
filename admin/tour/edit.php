@@ -4,13 +4,25 @@
      require_once ('../layouts/header.php');
      $sql = "select * from Category";
      $categoryItems = executeResult($sql);
+     $id = getGet('id');
+     
+     $query = "select * from tour where id = $id";
+     $rs = executeResult($query);
+     
+     foreach($rs as $value){
+         $title = $value['title'];
+         $price = $value['price'];
+         $discount = $value['discount'];
+         $des = $value['description'];
+     }
+     
 ?>
 <div class="container">
     <h2 style="text-align:center">Sửa thông tin tour</h2>
     <form method="post">
         <div class="form-group">
             <label>Tiêu đề</label>
-            <input type="text" class="form-control"  id="title" name="title">
+            <input type="text" class="form-control"  id="title" name="title" value="<?=$title?>">
         </div>
         <div class="form-group">
             <label>Danh mục:</label>
@@ -32,15 +44,15 @@
         </div>
         <div class="form-group">
             <label>Giá tiền</label>
-            <input type="text" class="form-control"  id="price" name="price">
+            <input type="text" class="form-control"  id="price" name="price" value="<?=$price?>">
         </div>
         <div class="form-group">
             <label>Giảm giá</label>
-            <input type="text" class="form-control"  id="discount" name="discount">
+            <input type="text" class="form-control"  id="discount" name="discount" value="<?=$discount?>">
         </div>
         <div class="form-group">
             <label>Mô tả</label>
-            <textarea class="form-control" name="description" id="description" value="" cols="30" rows="10"></textarea>
+            <textarea class="form-control" name="description" id="description" value="" cols="30" rows="10" value ="<?=$des?>"></textarea>
         </div>
         <a href="<?=$Url?>tour"><button class="btn btn-success "><i class="fas fa-arrow-left"></i>Quay lại</button></a>
         <button class="btn btn-success ">Lưu</button>
@@ -57,19 +69,20 @@
         $discount = getPOST('discount');
         
         $thumbnail = uploadFile('thumbnail');
-    
+        
         $description = getPOST('description');
         $category_id = getPOST('category_id');
         $creat_at = $update_at = date('Y-m-d H:s:i');
+        echo"<script>alert('$thumbnail')</script>";
         if($thumbnail != '') {
 			$sql = "update tour set thumbnail = '$thumbnail', title = '$title', price = $price, discount = $discount, description = '$description', update_at = '$updated_at', category_id = '$category_id' where id = $id";
 		} else {
-			$sql = "update tour set title = '$title', price = $price, discount = $discount, description = '$description', update_at = '$updated_at', category_id = '$category_id' where id = $id";
+			$sql = "update tour set title = '$title', price = $price, discount = $discount, description = '$description', update_at = '$update_at', category_id = '$category_id' where id = $id";
 		}
 		
 		execute($sql);
         echo"<script>alert('Sửa thành công!')</script>";
-		header('Location: ./');
+		
 		die();
     }
 ?>

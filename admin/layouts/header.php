@@ -118,9 +118,7 @@
           <li class="nav-item">
             <a class="nav-link" href="<?=$Url?>tour"><i class="fas fa-plane-departure icon"></i>Tour</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?=$Url?>other"><i class="fas fa-hotel icon"></i>Khách sạn</a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="<?=$Url?>category"><i class="fas fa-list-alt icon"></i> Danh mục Tour</a>
           </li>

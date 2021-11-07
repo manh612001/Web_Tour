@@ -23,6 +23,7 @@
                 <th>Danh mục</th>
                 <th style="width:50px">Sửa</th>
                 <th style="width:50px">Xóa</th>
+                <th style="width:50px">chi tiết</th>
             </tr>
         </thead>
         <tbody>
@@ -38,6 +39,7 @@
                             <td>'.$value['category_name'].'</td>
                             <td style="width:50px"><a href="edit.php?id='.$value['id'].'"><button class="btn btn-primary"><i class="fas fa-edit"></i></button</a></td>
                             <td style="width:50px"><a><button class="btn btn-danger" onclick="Delete('.$value['id'].')"><i class="fas fa-trash-alt"></i></button</a></td>
+                            <td style="width:50px"><a href="detail.php?id='.$value['id'].'"><button class="btn btn-success"><i class="fas fa-info-square"></i></button>
                         </tr>';
                 }
             ?>

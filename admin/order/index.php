@@ -8,44 +8,14 @@
     $data1 = executeResult($sql1);
 ?>
 <div class="container">
-
-
-<!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-        Modal body..
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      </div>
-
-    </div>
-  </div>
-</div>
-
     <h2 style="text-align:center;">Quản lý tour</h2>
     <div class="row" style="width:100%;">
-        <div class="col-md-6" style="border-right:1px solid;margin-top:10px;">
-            
-            
-            <div class="jumbotron " >
+        <div class="col-md-6" style="border-right:1px solid;">
                 <?php
                     foreach($data as $value){
                         
                         echo'
-                            
+                        <div class="jumbotron ">
                             <h6 style="text-align:center;">'.$value['tour_name'].'</h6>
                             <p>Tên: '.$value['fullname'].'</p>
                             <p>Email: '.$value['email'].'</p>
@@ -53,29 +23,24 @@
                             <p>Giá: '.number_format($value['discount']).' VNĐ</p>
                             <p>Ngày đi: '.$value['date'].'</p>';
                             if($value['status']==0){
-                                echo'<p class="text-warning">Trạng thái: Đang chờ xử lý<p>';
+                                echo'<p>Trạng thái: <span class="text-warning">Đang chờ xử lý</span><p>';
                             }
                             echo'
                             <a><button class="btn btn-success" onclick="Update('.$value['id'].',1)">Xác nhận</button></a>
                             <button class="btn btn-danger" onclick="Delete('.$value['id'].')">Hủy</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Open modal
-</button>
-                            ';
+                        </div>';
                           
                     }
-                ?>
-                
-                
-            </div>
+                ?>     
         </div>
+        
         <div class="col-md-6">
             
-            <div class="jumbotron" style="margin-top:10px">
+            
             <?php
                 foreach($data1 as $value){
                     echo'
-                        
+                    <div class="jumbotron" >
                             <h6 style="text-align:center;">'.$value['tour_name'].'</h6>
                             <p>Tên: '.$value['fullname'].'</p>
                             <p>Email: '.$value['email'].'</p>
@@ -83,19 +48,16 @@
                             <p>Giá: '.number_format($value['discount']).' VNĐ</p>
                             <p>Ngày đi: '.$value['date'].'</p>';
                             if($value['status']==1){
-                                echo'<p class="text-success">Trạng thái: Thành công<p>';
+                                echo'<p>Trạng thái:<span class="text-success"> Thành công</span><p>';
                             }
                             echo'
                             <button class="btn btn-danger" onclick="Delete('.$value['id'].')">Hủy</button>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-  Open modal
-</button>';
+                    </div>';
                         
                 }
             ?>
-            </div>
         </div>
-    </div>
+    </div>       
 </div>
 <script>
     function Update(id, status) {

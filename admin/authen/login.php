@@ -8,6 +8,31 @@
         header('Location:../');
         die();
     }
+    $mess ='';
+   
+    $fullname = $email = '';
+    if(!empty($_POST)){
+    $email = getPOST('email');
+    $password = getPOST('password');
+
+    $sql = "select * from user where email = '$email' and password = '$password'";
+    $userExist = executeResult($sql,true);
+    if($userExist == null){
+        $mess = "Sai email hoặc mật khẩu!";
+    }
+    else{
+        $token = $userExist['email'].time();
+        setcookie('token',$token,time()+1*24*60*60,'/');
+        $UserId = $userExist['id'];
+        $_SESSION['user'] = $userExist;
+        $created_at = date('Y-m-d H:i:s');
+        $sql = "insert into token (user_id,token,created_at) values('$UserId','$token','$created_at')";
+        execute($sql);
+        header('Location:../');
+        die();
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,17 +52,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="login.css">
     <title>Document</title>
-   
-        
-
 </head>
 <body>
     
-    <form action="" class="form-login" method="post">
-        <h1>Đăng nhập</h1> 
-        
+    <form action="" class="form-login" method="post" style="height:450px">
+        <h1 style="margin-bottom:10px;">Đăng nhập</h1> 
+        <h6 class="text-danger" style="text-align:center;"><?=$mess?></h6>
         <div class="txtb">
-            <input type="text" placeholder="Email" name="email">
+            <input type="email" placeholder="Email" name="email" require="true">
         </div>
         <div class="txtb">
             <input type="password" placeholder="Password" name="password">
@@ -45,31 +67,7 @@
         <input type="submit" class="logbtn" value="Đăng nhập" >
         
      </form>
- 
-     <?php
-        $fullname = $email = $mess ='';
-        if(!empty($_POST)){
-        $email = getPOST('email');
-        $password = getPOST('password');
 
-        $sql = "select * from user where email = '$email' and password = '$password'";
-        $userExist = executeResult($sql,true);
-        if($userExist == null){
-            $mess ="Đăng nhập không thành công vui lòng nhập lại email hoặc mật khẩu";
-        }
-        else{
-            $token = $userExist['email'].time();
-            setcookie('token',$token,time()+1*24*60*60,'/');
-            $UserId = $userExist['id'];
-            $_SESSION['user'] = $userExist;
-            $created_at = date('Y-m-d H:i:s');
-            $sql = "insert into token (user_id,token,created_at) values('$UserId','$token','$created_at')";
-            execute($sql);
-            header('Location:../');
-            die();
-        }
-    }
-?>
 
     
 </body>
