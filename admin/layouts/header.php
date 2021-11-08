@@ -53,11 +53,7 @@
       .row {
         width: 100vw;
       }
-      .col-md-2 {
-        padding:0 0 0 10px;
-        height:1200px;
-        
-      }
+      
       .fas { 
         font-size: 20px;
         text-align:center;
@@ -66,28 +62,21 @@
         margin-right:10px;
         
       }
-      .col-md-10 {
-        padding:0;
-      }
       
-      li a {
-        color: #00a8ff;
-      }
       span {
         margin: auto;
       }
       .navbar-brand {
         margin: auto;
       }
-      #search {
-        width: 80%;
-      }
+      
       #logout {
         
         display:block;
         margin:auto;
         
       }
+      
       #logout,.nav-item a:hover{
         color:white;
       }
@@ -102,47 +91,51 @@
       }
       p{
         margin-bottom:5px;
+      }.navbar{
+        padding:0;
       }
     </style>
   </head>
-  <body>
-  <div class="row">
-        <div class="col-md-2 bg-dark ">
-          <nav class="navbar navbar-expand-sm  navbar-dark">
-            <h1 class="navbar-brand">BlackWhite</h1>
-          </nav>
-          <ul class="nav flex-column ">
-          <li class="nav-item">
-            <a class="nav-link" href="<?=$Url?>"><i class="fas fa-home icon"></i>Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?=$Url?>tour"><i class="fas fa-plane-departure icon"></i>Tour</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="<?=$Url?>category"><i class="fas fa-list-alt icon"></i> Danh mục Tour</a>
-          </li>
-          <li class="nav-item" id ="user">
-            <a class="nav-link " href="<?=$Url?>order"><i class="fas fa-calendar-check icon"></i>  Quản lý tour</a>
-          </li>
-          <li class="nav-item user">
-            <a class="nav-link"  href="<?=$Url?>user"><i class="fas fa-user icon"></i> Quản lý người dùng</a>
-          </li>
-          
-        <button class="nav-item text-nowrap btn btn-outline-primary btn-sm " id= "logout">
-          <a class="nav-link" href="<?=$Url?>authen/logout.php"><i class="fas fa-sign-out-alt" style="margin-right:5px;"></i>Đăng xuất</a>
+<body>
+  <div class="row" style="min-height:100vh;">
+    <div class="col-md-2  bg-dark">
+      <nav class="navbar navbar-expand-sm  navbar-dark">
+        <a class="navbar-brand" href="<?=$Url?>index.php" >BlackWhite</a>
+      </nav>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
         </button>
-      </ul>
-        </ul>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="<?=$Url?>"><i class="fas fa-home icon"></i>Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?=$Url?>tour"><i class="fas fa-plane-departure icon"></i>Tour</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?=$Url?>category"><i class="fas fa-list-alt icon"></i> Danh mục Tour</a>
+            </li>
+            <li class="nav-item" id ="user">
+              <a class="nav-link " href="<?=$Url?>order"><i class="fas fa-calendar-check icon"></i>  Quản lý tour</a>
+            </li>
+            <li class="nav-item user">
+              <a  class="nav-link" href="<?=$Url?>user"><i class="fas fa-user icon"></i> Quản lý người dùng</a>
+            </li>
+            <button class="nav-item text-nowrap btn btn-outline-primary btn-sm " id= "logout">
+              <a class="nav-link" href="<?=$Url?>authen/logout.php"><i class="fas fa-sign-out-alt" style="margin-right:5px;"></i>Đăng xuất</a>
+            </button>
+          </ul>
         </div>
-        <div class="col-md-10 bg-light">
-          <nav class="navbar navbar-expand-sm bg-light navbar-light right">
-            
-            <input class="form-control" id="search" type="text" placeholder="Tìm kiếm...">
-            <?php
-              foreach ($data as $value) {
-                echo '<span class="text-gray">'.$value['fullname'].'</span>';
-              }
-            ?>
-          </nav>
-          <main>
+      </nav>
+    </div>
+    <div class="col-md-10 bg-light">
+      <nav class="navbar navbar-expand-sm bg-light navbar-light right" style="position:relative;">
+        <?php
+          foreach ($data as $value) {
+            echo '<span class="text-gray" style="position:absolute;right:0;top:10px;">Xin chào! '.$value['fullname'].'</span>';
+          }
+        ?>
+      </nav>
+  <main>

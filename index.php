@@ -1,13 +1,10 @@
 <?php
-    
-    
+    $title = 'Trang chủ';
     require_once('layout/header.php');
     $sql = "select * from category ";
     $data =  executeResult($sql);
-    $sql1= "select * from tour limit 6";
+    $sql1= "select * from tour order by id DESC limit 6";
     $data1 = executeResult($sql1);
-    
-    
 ?>
 
 
@@ -47,7 +44,11 @@
   <span class="carousel-control-next-icon"></span>
 </a>
 <div style="margin:auto;position:relative;top:-150px;width:30%;">
-  <input type="text" style="padding:5px 15px;"class="form-control" placeholder="Tìm kiếm địa điểm?"><a href="#" style="position:absolute;right:15px;top:5px;"><i class="fas fa-search"></i></a></input>
+  <form method ="post" action = "search.php" class="form-inline">
+    <input type="text" name = "search"style="padding:5px 15px;"class="form-control" id ="search" placeholder="Tìm kiếm địa điểm?"></input>
+    <button id="btn_search" class="btn btn-light" type="submit"><i class="fas fa-search"></i></button>
+  </form>
+  
   </div>
 </div>
       <h2 style="text-align:center; margin-bottom:20px;">Các tour du lịch mới nhất</h2>
@@ -59,7 +60,7 @@
               
                 <div class="col-md-4 col-sm-6 " style="margin-bottom:20px;">
                   <div class="card" style="margin: 0 auto;">
-                  <img src="'.Url($value['thumbnail'],'./').'" style="height:192px;"></img>
+                  <img src="'.path($value['thumbnail'],'./').'" style="height:192px;"></img>
                   <p style="padding:0 15px;margin-top:20px;">'.$value['title'].'</p>
                   <p style="padding:0 15px;color:red"><span style="color:black;">Giá:</span> '.number_format($value['discount']).'đ</p>
                   <div class="bt">
@@ -73,7 +74,17 @@
           ?>
         </div>
       </div>
-
+<style>
+  #btn_search{
+    padding:5px 10px;
+    position: absolute;
+    right:0;
+  }
+  #search{
+    margin-right:10px;
+    width:100%;
+  }
+</style>
 <?php
     require_once('./layout/footer.php'); // gọi file footer để load menu
 ?>

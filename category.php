@@ -1,4 +1,5 @@
 <?php
+    $title = 'Danh mục tour';
     require_once('layout/header.php'); 
     // gọi file header để load menu 
     $id = getGet('id');
@@ -24,10 +25,10 @@
             foreach($data1 as $value){
               echo'
               
-                <div class="col-md-4 col-sm-6 " style="margin-bottom:20px;">
+                <div class="col-md-4 col-sm-6 " style="margin-bottom:150px;">
                   <div class="card" style="margin: 0 auto;">
-                  <img src="'.Url($value['thumbnail'],'./').'" style="height:192px;"></img>
-                  <p style="padding:0 15px;margin-top:20px;">Tên: '.$value['title'].'</p>
+                  <img src="'.path($value['thumbnail'],'./').'" style="height:192px;"></img>
+                  <p style="padding:0 15px;margin-top:20px;">Tour: '.$value['title'].'</p>
                   <p style="padding:0 15px;color:red"><span style="color:black;">Giá:</span> '.number_format($value['discount']).'đ</p>
                   <div class="bt">
                     <a href="order.php?id='.$value['id'].'"><button class="btn btn-danger w-100 class="btn btn-primary" data-toggle="modal" data-target="#myModal"" style="margin-bottom:5px;"><i class="far fa-shopping-cart" style="margin-right:15px;"></i>Đặt ngay</button></a>

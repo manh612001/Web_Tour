@@ -47,7 +47,7 @@
             <label>Mô tả</label>
             <textarea class="form-control" name="description" id="description" value="" cols="30" rows="10"></textarea>
         </div>
-        <a href="<?=$Url?>tour"><button class="btn btn-success "><i class="fas fa-arrow-left"></i>Quay lại</button></a>
+        
         <button class="btn btn-success ">Lưu</button>
         
         
@@ -72,7 +72,7 @@
             //insert
         $sql = "insert into tour(category_id,title,price,discount,thumbnail,day,description,creat_at,update_at) values ('$category_id','$title','$price','$discount','$thumbnail','$day','$description','$creat_at','$update_at')";
         execute($sql);
-        echo"<script>alert('Thêm/Sửa thành công')</script>";
+        echo"<script>alert('Thêm thành công')</script>";
         die();
         
     }

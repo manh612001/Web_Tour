@@ -21,7 +21,7 @@
 ?>
 <div class="container">
     
-    <h1 style="text-align:center;">Danh mục Tour</h1>
+    <h2 style="text-align:center;margin-top:1em;">Danh mục Tour</h2>
     <label style="margin-left:15px;" >Tên danh mục:</label>
     <form class="form-inline " action="?"style="margin:0 0 10px 15px;" method="post" onsubmit=" return validateForm()">
         <input class="form-control mr-sm-2" require="true" type="text" id="name" name="name" value="<?=$name?>">

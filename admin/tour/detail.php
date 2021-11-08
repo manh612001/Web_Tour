@@ -7,32 +7,37 @@
     $rs = executeResult($query);
 ?>
 <div class="container">
-    <table class="table table-hover">
-        <thead>
-            <tr>
-                <th>Tên</th>
-                <th>Hình ảnh</th>
-                <th>Giá</th>
-                <th>Giảm giá</th>
-                <th>Thời gian</th>
-                <th>Mô tả</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="row">
+        <div class="col-md-4">
             <?php
                 foreach($rs as $value){
+                    echo'<img src = "'.path($value['thumbnail']).'" style="width:100%;"> ';
+                }
+            ?>
+        </div>
+        <div class="col-md-8">
+            <?php
+                foreach($rs as $value){
+                    
                     echo'
-                        <tr>
-                            <td>'.$value['title'].'</td>
-                            <td>'.Url($value['thumbnail']).'</td>
-                            <td>'.$value['price'].'</td>
-                            <td>'.$value['discount'].'</td>
-                            <td>'.$value['day'].'</td>
-                            <td>'.$value['description'].'</td>
-                        </tr>
+                    <div class="jumbotron"  style = "height:100%;position:relative;">
+                        <p>'.$value['title'].'</p>
+                        <p>Giá: '.number_format($value['price']).'đ</p>
+                        <p>Giảm giá: '.number_format($value['discount']).'đ</p>
+                        <p>Thời gian đi: '.$value['day'].'</p>
+                        <a class="btn btn-success" href="hotel.php?id='.$value['id'].'" >Thêm khách sạn</a>
+                        <a href="galery.php?id='.$value['id'].'" class="btn btn-success" >Thêm ảnh</a>
+                    </div>
                     ';
                 }
             ?>
-        </tbody>
-    </table>
+            
+        </div>
+    </div>
+    <?php 
+        foreach($rs as $value){
+            echo'<p>Điểm nổi bật:</br>'.$value['description'].'</p>';
+        }
+    ?>
+
 </div>

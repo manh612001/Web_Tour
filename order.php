@@ -1,6 +1,6 @@
 <?php
     require_once('layout/header.php');
-    
+    $title = 'Đặt tour';
     $id = getGet('id');
     $query = "select * from tour where id= $id";
     $rs = executeResult($query);

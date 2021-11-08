@@ -15,13 +15,12 @@
          $discount = $value['discount'];
          $day = $value['day'];
          $des = $value['description'];
-         
      }
      
 ?>
 <div class="container">
     <h2 style="text-align:center">Sửa thông tin tour</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <div class="form-group">
             <label>Tiêu đề</label>
             <input type="text" class="form-control"  id="title" name="title" value="<?=$title?>">
@@ -58,9 +57,9 @@
         </div>
         <div class="form-group">
             <label>Mô tả</label>
-            <textarea class="form-control" name="description" id="description" value="" cols="30" rows="10" value ="<?=$des?>"></textarea>
+            <textarea class="form-control" name="description" id="description" value="" cols="30" rows="10"><?=$des?></textarea>
         </div>
-        <a href="<?=$Url?>tour"><button class="btn btn-success "><i class="fas fa-arrow-left"></i>Quay lại</button></a>
+        
         <button class="btn btn-success ">Lưu</button>
         
         

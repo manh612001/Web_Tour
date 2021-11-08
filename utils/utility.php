@@ -71,7 +71,7 @@ function uploadFile($key, $rootPath = "../../") {
 
     return $newPath;
 }
-function Url($thumbnail, $Url = "../../") { // thêm đường dẫn folder $Url
+function path($thumbnail, $Url = "../../") { // thêm đường dẫn folder $Url
 
     return $Url.$thumbnail;
 }

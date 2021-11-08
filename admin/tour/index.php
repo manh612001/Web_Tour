@@ -7,7 +7,7 @@
 ?>
 <div class="container">
     
-    <h2 style="text-align:center;">Danh sách các Tour</h2>
+    <h2 style="text-align:center;margin-top:1em;">Danh sách các Tour</h2>
     
     <a href="add.php"><button type="button" class="btn btn-success"  style="margin-bottom:10px;"><i class="fas fa-plus"></i></button></a>
 
@@ -34,7 +34,7 @@
                         <tr>
                             <td style="width:50px">'.(++$index).'</td>
                             <td>'.$value['title'].'</td>
-                            <td><img src="'.Url($value['thumbnail']).'" style="width:100px"></td>
+                            <td><img src="'.path($value['thumbnail']).'" style="width:100px"></td>
                             <td>'.number_format($value['discount']).'</td>
                             <td>'.$value['category_name'].'</td>
                             <td style="width:50px"><a href="edit.php?id='.$value['id'].'"><button class="btn btn-primary"><i class="fas fa-edit"></i></button</a></td>

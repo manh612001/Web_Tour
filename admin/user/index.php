@@ -14,7 +14,7 @@ $data1 = executeResult($sql1);
 
   <div class="container">
         <nav id="nav-main">
-            <h2 class="justify-content-center">Quản lý người dùng</h2>
+            <h2 class="justify-content-center" style="margin-top:1em;">Quản lý người dùng</h2>
             <?php
 foreach ($data1 as $value) {
     if ($value['role_id'] == 1) {

@@ -8,7 +8,7 @@
     $data1 = executeResult($sql1);
 ?>
 <div class="container">
-    <h2 style="text-align:center;">Quản lý tour</h2>
+    <h2 style="text-align:center;margin-top:1em;">Quản lý tour</h2>
     <div class="row" style="width:100%;">
         <div class="col-md-6" style="border-right:1px solid;">
                 <?php
