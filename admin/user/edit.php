@@ -2,8 +2,17 @@
   $title = 'Sửa';
   $Url = '../';
   require_once ('../layouts/header.php');
+  $id = getGet('id');
+  $query = "select * from user where id = $id";
+  $rs = executeResult($query);
+  foreach($rs as $value){
+    $name = $value['fullname'];
+    $sdt = $value['phone_number'];
+    $pw = $value['password'];
+  }
 ?>
-<div class="container">
+<div class="container" style = "margin-top:40px;">
+<h2 style="text-align:center">Sửa thông tin</h2>
 <form onsubmit="return validateForm()" method="post">
   <label>Họ Tên<span style="color: red">*</span></label>
   <input
@@ -12,20 +21,21 @@
     id="fullname"
     name="fullname"
     requice="true"
+    value ="<?=$name?>"
   />
   
   <label>SĐT<span style="color: red">*</span></label>
-  <input type="text" class="form-control" id="sdt" name="sdt" requice="true" />
+  <input type="tel" class="form-control" id="sdt" name="sdt" requice="true" value = "<?=$sdt?>" />
   <label>Quyền<span style="color: red">*</span></label>
   <select name="role" id="role" class="custom-select" id="role" requice="true">
     <option value="1">Admin</option>
     <option value="2">User</option>
   </select>
   <label>Password<span style="color: red">*</span></label>
-  <input type="text" class="form-control" id="pw" name="pw" requice="true" />
+  <input type="password" class="form-control" id="pw" name="pw" requice="true"  value="<?=$pw?>"/>
   <label>Xác nhận lại mật khẩu<span style="color: red">*</span></label>
   <input
-    type="text"
+    type="password"
     class="form-control"
     id="conf_pw"
     name="pw"
