@@ -2,7 +2,7 @@
     $title = 'Quản lý Tour';
     $Url = '../';
     require_once('../layouts/header.php');
-    $sql="select tour.title as tour_name,tour.discount,order_tour.id,order_tour.fullname,order_tour.email,order_tour.phone_number,order_tour.date,order_tour.status from tour inner join order_tour on tour.id = order_tour.tour_id where order_tour.status = '0'";
+    $sql="select tour.title as tour_name,tour.discount,order_tour.* from tour inner join order_tour on tour.id = order_tour.tour_id where order_tour.status = '0'";
     $data = executeResult($sql);
     $sql1="select tour.title as tour_name,tour.discount,order_tour.id,order_tour.fullname,order_tour.email,order_tour.phone_number,order_tour.date,order_tour.status from tour inner join order_tour on tour.id = order_tour.tour_id where order_tour.status = '1'";
     $data1 = executeResult($sql1);
@@ -22,6 +22,9 @@
                             <p>SĐT: '.$value['phone_number'].'</p>
                             <p>Giá: '.number_format($value['discount']).' VNĐ</p>
                             <p>Ngày đi: '.$value['date'].'</p>';
+                            if($value['note']!=''){
+                                echo'<p>Lời nhắn: '.$value['note'].'</p>';
+                            }
                             if($value['status']==0){
                                 echo'<p>Trạng thái: <span class="text-warning">Đang chờ xử lý</span><p>';
                             }

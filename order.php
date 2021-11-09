@@ -37,7 +37,7 @@
                             <p>Thời gian đi: '.$value['day'].'</p>
                         </div>
                         </div>
-                        <p>Mô tả: '.$value['description'].'</p>
+                        <p>Mô tả:</br> '.$value['description'].'</p>
                         ';
                 }
             ?>
