@@ -10,7 +10,7 @@
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #3b5998;"
-        href="#!"
+        href="https://www.facebook.com/100146892494379"
         role="button"
         ><i class="fab fa-facebook-f" style="font-size:25px;"></i
       ></a>
@@ -37,7 +37,7 @@
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #ac2bac;"
-        href="#!"
+        href="https://www.instagram.com/namdzdz511/"
         role="button"
         ><i class="fab fa-instagram"></i
       ></a>
@@ -54,7 +54,7 @@
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #333333;"
-        href="#!"
+        href="https://github.com/manh612001"
         role="button"
         ><i class="fab fa-github"></i>
       </a>
@@ -72,11 +72,10 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Company name
+            <i class="fas fa-gem me-3"></i>Black White
           </h6>
           <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
+            Black White in your area <br> Bước chân của các bạn là bộ mặt của chúng tôi ...
           </p>
         </div>
         <!-- Grid column -->
@@ -85,19 +84,19 @@
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Products
+            Thành viên
           </h6>
           <p>
-            <a href="#!" class="text-reset">Angular</a>
+            <a href="#!" class="text-reset">Nam</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">React</a>
+            <a href="#!" class="text-reset">Mạnh</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Vue</a>
+            <a href="#!" class="text-reset">Cảnh</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Laravel</a>
+            <a href="#!" class="text-reset">Vân</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -106,19 +105,19 @@
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Useful links
+            Services
           </h6>
           <p>
-            <a href="#!" class="text-reset">Pricing</a>
+            <a href="#!" class="text-reset">Founder</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Settings</a>
+            <a href="#!" class="text-reset">Project Manager</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Orders</a>
+            <a href="#!" class="text-reset">Marketing</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Help</a>
+            <a href="#!" class="text-reset">Designer</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -132,7 +131,7 @@
           <p><i class="fas fa-home me-3"></i>175 Tây Sơn, Đống Đa, Hà Nội</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
-            info@example.com
+            BlackWhite@inyourarea@gmail.com
           </p>
           <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
           

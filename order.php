@@ -1,4 +1,5 @@
 <?php
+    $title = 'Đặt tour';
     require_once('layout/header.php');
     $title = 'Đặt tour';
     $id = getGet('id');
@@ -56,7 +57,7 @@
         $date = getPOST('date');
         $total = 0;
         
-        $order_date = date('Y-m-d H:s:i');
+        $order_date = date('Y-m-d H:i:s');
         foreach($rs as $value){
             $total += (int)$number*(int)$value['discount'];
         }
