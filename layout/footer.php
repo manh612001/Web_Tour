@@ -87,16 +87,16 @@
             Thành viên
           </h6>
           <p>
-            <a href="#!" class="text-reset">Nam</a>
+            <a href="#!" class="text-reset">Nguyễn Hải Nam</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Mạnh</a>
+            <a href="#!" class="text-reset">Nguyễn Đắc Mạnh</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Vân</a>
+            <a href="#!" class="text-reset">Trần Thị Hồng Vân</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Cảnh</a>
+            <a href="#!" class="text-reset">Đoàn Xuân Cảnh</a>
           </p>
         </div>
         <!-- Grid column -->
