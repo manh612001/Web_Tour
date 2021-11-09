@@ -34,6 +34,7 @@
                         <div style="padding:10px 15px;">
                             <p>Tên: '.$value['title'].'</p>
                             <p style="color:red">Giá: '.number_format($value['discount']).'đ</p>
+                            <p>Thời gian đi: '.$value['day'].'</p>
                         </div>
                         </div>
                         <p>Mô tả: '.$value['description'].'</p>
