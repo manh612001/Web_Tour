@@ -49,14 +49,12 @@
             echo'<p>Mô tả:</br> '.$value['description'].'</p>';
         }
     ?>
-    <div>
+    <div class="row">
         <?php
             foreach($data1 as $value){
-                echo'
-                    
-                       <img src = "'.$value['thumbnail'].'" style="width:25%;">
-                    
-                ';
+                echo'<div class="col-md-3 col-6">
+                    <img src = "'.$value['thumbnail'].'" style = "width:100%;margin-bottom:20px;" >
+                </div>';
             }
         ?>
     </div>

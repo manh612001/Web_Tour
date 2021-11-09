@@ -24,8 +24,10 @@ function Delete(){
 		echo 'Danh mục này đang chứa danh sách các tour không thể xóa!';
 		die();
 	}
-    $sql1="delete from category where id = $id";
-    execute($sql1);
+    else{
+        $sql1="delete from category where id = $id";
+        execute($sql1);
+    }
   
 }
 ?>
