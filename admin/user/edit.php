@@ -31,10 +31,10 @@
       <option value="2">User</option>
     </select>
     <label>Password<span style="color: red">*</span></label>
-    <input type="password" class="form-control" id="pw" name="pw" requice="true"  value="<?=$pw?>"/>
+    <input type="text" class="form-control" id="pw" name="pw" requice="true"  value="<?=$pw?>"/>
     <label>Xác nhận lại mật khẩu<span style="color: red">*</span></label>
     <input
-      type="password"
+      type="text"
       class="form-control"
       id="conf_pw"
       name="pw"

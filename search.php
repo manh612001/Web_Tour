@@ -11,12 +11,18 @@
 <div class="container">
 <div class="row" style="margin-top:100px;">
     <?php
+        $key = getPOST('search');
+        if($key ==''){
+          
+          echo"<script>alert('Vui lòng điền thông tin tìm kiếm!')</script>";
+        }
+        else{
         $search = getPOST('search');
         $query = "select count(*) as total from tour  where title like '%$search%'";
         $rs = executeResult($query);
         foreach($rs as $value){
             if($value['total']<=0){
-                echo"<h2>Không có kết quả tìm kiếm nào cho $search!<h2>";
+                echo"<h2>Không có kết quả tìm kiếm nào cho: $search!<h2>";
             }
         }
         foreach($data1 as $value){
@@ -34,7 +40,8 @@
                 </div>
               ';
             }
-          ?>
+        }
+      ?>
 </div>
 </div>
 <?php

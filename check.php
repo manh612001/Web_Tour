@@ -7,8 +7,8 @@
   
   <div class="row" >
     <div class="col-md-6">
-      <form method="post"  class="form-inline">
-        <input type="tel" pattern = "[0-9]{9,12}" class="form-control mr-sm-2" name ="search"require placeholder="Nhập số điện thoại..">
+      <form method="post" onsubmit="return validateForm()"  class="form-inline">
+        <input type="tel" pattern = "[0-9]{9,12}" class="form-control mr-sm-2" id = "search" name ="search"require placeholder="Nhập số điện thoại..">
         <button type = "submit" class="btn btn-info"><i class="fas fa-search"></i></button>
       </form>
     </div>
@@ -20,7 +20,7 @@
         $rs = executeResult($query);
         foreach($rs as $value){
           if($value['total']<=0){
-            echo"<h2>Không có kết quả tìm kiếm nào cho $sdt!<h2>";
+            echo"<h2>Không có kết quả tìm kiếm nào cho: $sdt!<h2>";
           }
         }
       }
@@ -52,9 +52,17 @@
           }
           ?>
   </div>  
-
 </div>
-
+<script>
+  function validateForm(){
+    $sdt = $('#seacrh').val();
+    if($sdt ==''){
+      alert("Vui lòng nhập số điện thoại!");
+      return false;
+    }
+    return true;
+  }
+</script>
 <?php
   require_once('./layout/footer.php'); // gọi file footer để load menu
 ?>

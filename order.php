@@ -49,7 +49,7 @@
     $sdt = $('#sdt').val();
     $number = $('#number').val();
     $date = $('#date').val();
-    if($fullname =='' &&$email =='' &&$sdt =='' &&$number ==''&&$date =='' ){
+    if($fullname =='' ||$email =='' ||$sdt =='' ||$number ==''||$date =='' ){
       alert("Vui lòng điền đầy đủ thông tin");
       return false;
     }

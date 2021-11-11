@@ -44,7 +44,7 @@
   <span class="carousel-control-next-icon"></span>
 </a>
 <div style="margin:auto;position:relative;top:-150px;width:30%;">
-  <form method ="post" action = "search.php" class="form-inline">
+  <form method ="post" action = "search.php" class="form-inline" onsubmit="return validateForm()">
     <input type="text" name = "search"style="padding:5px 15px;"class="form-control" id ="search" placeholder="Tìm kiếm địa điểm?"></input>
     <button id="btn_search" class="btn btn-light" type="submit"><i class="fas fa-search"></i></button>
   </form>

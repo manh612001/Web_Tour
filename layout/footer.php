@@ -37,7 +37,7 @@
       <a
         class="btn btn-primary btn-floating m-1"
         style="background-color: #ac2bac;"
-        href="https://www.instagram.com/namdzdz511/"
+        href="https://www.instagram.com/tthv_van/?hl=vi"
         role="button"
         ><i class="fab fa-instagram"></i
       ></a>
@@ -87,16 +87,16 @@
             Thành viên
           </h6>
           <p>
-            <a href="#!" class="text-reset">Nguyễn Hải Nam</a>
+            <a href="#!" class="text-reset">Hải Nam</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Nguyễn Đắc Mạnh</a>
+            <a href="#!" class="text-reset">Đắc Mạnh</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Trần Thị Hồng Vân</a>
+            <a href="#!" class="text-reset">Hồng Vân</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Đoàn Xuân Cảnh</a>
+            <a href="#!" class="text-reset">Xuân Cảnh</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -131,7 +131,7 @@
           <p><i class="fas fa-home me-3"></i>175 Tây Sơn, Đống Đa, Hà Nội</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
-            BlackWhiteInyourarea@gmail.com
+            BlackWhite@gmail.com
           </p>
           <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
           
