@@ -10,10 +10,6 @@
   $rs = $user['id'];
   $sql = "select user.* from user where id = '$rs'";
   $data = executeResult($sql);
-  
-  
-  
-  
 ?>
 <!DOCTYPE html>
 <html lang="en">

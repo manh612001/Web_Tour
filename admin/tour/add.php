@@ -46,37 +46,33 @@
         <div class="form-group">
             <label>Mô tả</label>
             <textarea class="form-control" name="description" id="description" value="" cols="30" rows="10"></textarea>
-        </div>
-        
-        <button class="btn btn-success ">Lưu</button>
-        
-        
+        </div> 
+        <button class="btn btn-success ">Lưu</button> 
     </form>
-    
 </div>
 <?php
   
     if(!empty($_POST)) {
+        
         $id = getPOST('id');
         $title = getPOST('title');
         $price = getPOST('price');
         $discount = getPOST('discount');
         $day = getPOST('day');
         $thumbnail = uploadFile('thumbnail');
-    
         $description = getPOST('description');
         $category_id = getPOST('category_id');
         $creat_at = $update_at = date('Y-m-d H:s:i');
-    
-        
-            //insert
-        $sql = "insert into tour(category_id,title,price,discount,thumbnail,day,description,creat_at,update_at) values ('$category_id','$title','$price','$discount','$thumbnail','$day','$description','$creat_at','$update_at')";
-        execute($sql);
-        echo"<script>alert('Thêm thành công')</script>";
-        die();
-        
+        if(!empty($title)&&!empty($price)&&!empty($discount)&&!empty($day)&&!empty($_FILES['thumbnail'])){
+            $sql = "insert into tour(category_id,title,price,discount,thumbnail,day,description,creat_at,update_at) values ('$category_id','$title','$price','$discount','$thumbnail','$day','$description','$creat_at','$update_at')";
+            execute($sql);
+            echo"<script>alert('Thêm thành công')</script>";
+            die();
+        }
+        else{
+            echo"<script>alert('Vui lòng điền đầy đủ thông tin!')</script>";
+        }
     }
-    
 ?>
 <?php
   require_once ('../layouts/footer.php');

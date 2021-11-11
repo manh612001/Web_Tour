@@ -6,13 +6,9 @@
     $data = executeResult($sql);
 ?>
 <div class="container">
-    
     <h2 style="text-align:center;margin-top:1em;">Danh sách các Tour</h2>
-    
     <a href="add.php"><button type="button" class="btn btn-success"  style="margin-bottom:10px;"><i class="fas fa-plus"></i></button></a>
-
     <!-- The Modal -->
-    
     <table class="table table-hover table-bordered">
         <thead>
             <tr>

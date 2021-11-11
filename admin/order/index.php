@@ -13,7 +13,6 @@
         <div class="col-md-6" style="border-right:1px solid;">
                 <?php
                     foreach($data as $value){
-                        
                         echo'
                         <div class="jumbotron ">
                             <h6 style="text-align:center;">'.$value['tour_name'].'</h6>
@@ -38,8 +37,6 @@
         </div>
         
         <div class="col-md-6">
-            
-            
             <?php
                 foreach($data1 as $value){
                     echo'
@@ -55,8 +52,7 @@
                             }
                             echo'
                             <button class="btn btn-danger" onclick="Delete('.$value['id'].')">Hủy</button>
-                    </div>';
-                        
+                    </div>';   
                 }
             ?>
         </div>
@@ -83,8 +79,6 @@
     })
     }
 </script>
-
-
 <?php
     require_once('../layouts/footer.php');
 ?>

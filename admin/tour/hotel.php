@@ -16,8 +16,7 @@
         $id = getGet('id');
         $query = "insert into hotel(name,tour_id) values('$name',$id)";
         execute($query);
-        echo"<script>alert('Thêm thành công')</script>";
-        
+        echo"<script>alert('Thêm thành công')</script>";  
     }
     require_once('../layouts/footer.php');
 ?>

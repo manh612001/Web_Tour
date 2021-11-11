@@ -29,7 +29,7 @@
                   <div class="card" style="margin: 0 auto;">
                   <img src="'.path($value['thumbnail'],'./').'" style="height:192px;"></img>
                   <p style="padding:0 15px;margin-top:20px;">Tour: '.$value['title'].'</p>
-                  <p style="padding:0 15px;color:red"><span style="color:black;">Giá:</span> '.number_format($value['discount']).'đ</p>
+                  <p style="padding:0 15px;">Giá: <span style="color:red;">'.number_format($value['discount']).'đ</span>/người</p>
                   <div class="bt">
                     <a href="order.php?id='.$value['id'].'"><button class="btn btn-danger w-100 class="btn btn-primary" data-toggle="modal" data-target="#myModal"" style="margin-bottom:5px;"><i class="far fa-shopping-cart" style="margin-right:15px;"></i>Đặt tour</button></a>
                     <a href="detail.php?id='.$value['id'].'"><button type="button" class="btn btn-outline-primary w-100" >Xem chi tiết</button></a>

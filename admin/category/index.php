@@ -20,14 +20,12 @@
     
 ?>
 <div class="container">
-    
     <h2 style="text-align:center;margin-top:1em;">Danh mục Tour</h2>
     <label style="margin-left:15px;" >Tên danh mục:</label>
-    <form class="form-inline " action="?"style="margin:0 0 10px 15px;" method="post" onsubmit=" return validateForm()">
+    <form class="form-inline " action=""style="margin:0 0 10px 15px;" method="post" onsubmit=" return validateForm()">
         <input class="form-control mr-sm-2" require="true" type="text" id="name" name="name" value="<?=$name?>">
         <input type="text" name = "id" name="id" value = "<?=$id?>" hidden="true">
-        <button class="btn btn-success" type="submit"><i class="fas fa-save" style="margin-right:5px"></i>Lưu</button>
-        
+        <button class="btn btn-success" type="submit"><i class="fas fa-save" style="margin-right:5px"></i>Lưu</button> 
     </form>
     <div class="col-md-12">
         <table class="table table-hover table-bordered">
@@ -59,7 +57,6 @@
 </div>
 <script>
     function validateForm(){
-        
         $name = $('#name').val();
         if($name==''){
             alert("Vui lòng nhập tên");

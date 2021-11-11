@@ -5,10 +5,8 @@
      $sql = "select * from Category";
      $categoryItems = executeResult($sql);
      $id = getGet('id');
-     
      $query = "select * from tour where id = $id";
      $rs = executeResult($query);
-     
      foreach($rs as $value){
          $title = $value['title'];
          $price = $value['price'];

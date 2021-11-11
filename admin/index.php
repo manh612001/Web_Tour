@@ -8,7 +8,7 @@
   $count = "select count(*) as total from order_tour where status = 0";
   $rs = executeResult($count);
 ?>
-<div class="container">
+<div class="container" style="margin-top:85px;">
   <?php
     foreach($rs as $value){
       if($value['total']<=0){
@@ -18,7 +18,7 @@
     foreach($data as $value){
       echo'
         <div class="alert alert-info alert-dismissible">
-          <p><strong>Thông báo!</strong> '.$value['title'].' được đặt vào lúc '.$value['order_date'].' </p>
+          <p><strong>Thông báo!</strong> '.$value['title'].' được đặt vào  '.$value['order_date'].' </p>
         </div>
       ';
     }

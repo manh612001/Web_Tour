@@ -32,30 +32,27 @@
     <title><?=$title?></title>
     <style>
       .carousel-inner img{
-    width: 100%;
-    z-index: -1;
-    height: 550px;
-}
-.icon{
-  padding:20px 20px 0 20px;
-}
-.mb-4 a{
-  border-radius:50%;
-}
-.card{
-  width: 98%;
-}
-.col-md-3 img{
-    width: 200px;
-    height: 200px;
-    
-}
-
-
-nav{
-  background:rgba(7,63,96,1);
-}
-
+      width: 100%;
+      z-index: -1;
+      height: 550px;
+      }
+      .icon{
+        padding:20px 20px 0 20px;
+      }
+      .mb-4 a{
+        border-radius:50%;
+      }
+      .card{
+        width: 98%;
+      }
+      .col-md-3 img{
+          width: 200px;
+          height: 200px;
+          
+      }
+      nav{
+        background:rgba(7,63,96,1);
+      }
     </style>
   </head>
   <body>
@@ -63,14 +60,11 @@ nav{
       <nav class="navbar navbar-expand-lg  navbar-dark fixed-top" >
         <!-- Brand -->
         <a class="navbar-brand" href="index.php"><h3>BlackWhite</h2></a>
-      
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
         <!-- Navbar links -->
-        
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
           <ul class="navbar-nav">
             <?php
@@ -84,16 +78,9 @@ nav{
             <li class="nav-item">
               <a href="check.php" class="nav-link">Tra cứu Booking</a>
             </li>
-            
           </ul>
-        </div>
-        
+        </div>     
       </nav>
-     
-    
-
-      <!-- Modal body -->
-
     </div>
   </div>
 </div>
@@ -102,4 +89,3 @@ nav{
     
 
 
-</script>

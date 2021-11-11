@@ -2,19 +2,16 @@
     session_start();
     require_once('../../utils/utility.php');
     require_once('../../database/dbhelper.php');
-    
     $user = getToken();
     if($user!=null) {
         header('Location:../');
         die();
     }
     $mess ='';
-   
     $fullname = $email = '';
     if(!empty($_POST)){
     $email = getPOST('email');
     $password = getPOST('password');
-
     $sql = "select * from user where email = '$email' and password = '$password'";
     $userExist = executeResult($sql,true);
     if($userExist == null){
@@ -32,9 +29,7 @@
         die();
     }
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,10 +46,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="login.css">
-    <title>Document</title>
+    <title>Đăng nhập</title>
 </head>
 <body>
-    
     <form action="" class="form-login" method="post" style="height:450px">
         <h1 style="margin-bottom:10px;">Đăng nhập</h1> 
         <h6 class="text-danger" style="text-align:center;"><?=$mess?></h6>
@@ -62,13 +56,9 @@
             <input type="email" placeholder="Email" name="email" require="true">
         </div>
         <div class="txtb">
-            <input type="password" placeholder="Password" name="password">
+            <input type="password" placeholder="Password" name="password" require>
         </div>
-        <input type="submit" class="logbtn" value="Đăng nhập" >
-        
+        <input type="submit" class="logbtn" value="Đăng nhập" > 
      </form>
-
-
-    
 </body>
 </html>

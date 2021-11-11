@@ -35,7 +35,7 @@
                         <div style="margin:auto 0;">
                         <p>Tour: '.$value['title'].'</p>
                         <p>Danh mục: '.$value['category_name'].'</p>
-                        <p>Giá: '.number_format($value['discount']).'đ <span style="color:red;text-decoration:line-through;font-size:15px">'.number_format($value['price']).'đ</span></p>
+                        <p>Giá: <span style="color:red"> '.number_format($value['discount']).'đ</span>/người <span style="text-decoration:line-through;font-size:15px">'.number_format($value['price']).'đ</span></p>
                         <p>Thời gian: '.$value['day'].'</p>
                         <p>Khách sạn: '.$name_hotel.',...</p>
                         <a href="order.php?id='.$value['id'].'"><button class="btn btn-danger"><i class="far fa-shopping-cart" style="margin-right:15px;"></i>Đặt tour</button></a>

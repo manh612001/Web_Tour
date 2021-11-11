@@ -131,7 +131,7 @@
           <p><i class="fas fa-home me-3"></i>175 Tây Sơn, Đống Đa, Hà Nội</p>
           <p>
             <i class="fas fa-envelope me-3"></i>
-            BlackWhite@inyourarea@gmail.com
+            BlackWhiteInyourarea@gmail.com
           </p>
           <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
           

@@ -8,7 +8,7 @@
   <div class="row" >
     <div class="col-md-6">
       <form method="post"  class="form-inline">
-        <input type="tel" pattern = "[0-9]{9,12}" class="form-control mr-sm-2" name ="search"require="true" placeholder="Nhập số điện thoại..">
+        <input type="tel" pattern = "[0-9]{9,12}" class="form-control mr-sm-2" name ="search"require placeholder="Nhập số điện thoại..">
         <button type = "submit" class="btn btn-info"><i class="fas fa-search"></i></button>
       </form>
     </div>
@@ -19,16 +19,15 @@
         $query = "select count(*) as total from order_tour  where phone_number = $sdt";
         $rs = executeResult($query);
         foreach($rs as $value){
-            if($value['total']<=0){
-                echo"<h2>Không có kết quả tìm kiếm nào cho $sdt!<h2>";
-            }
+          if($value['total']<=0){
+            echo"<h2>Không có kết quả tìm kiếm nào cho $sdt!<h2>";
+          }
         }
       }
       if(!empty($_POST['search'])){
         $sdt = getPOST('search');
         $query = "select order_tour.*,tour.title,tour.day from order_tour inner join tour on tour.id = order_tour.tour_id where phone_number = $sdt";
         $rs = executeResult($query);
-          
         foreach($rs as $value){
           echo'
               <div class="jumbotron" style="padding:10px 20px;margin-bottom:10px;">
