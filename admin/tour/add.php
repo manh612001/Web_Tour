@@ -63,7 +63,7 @@
         $description = getPOST('description');
         $category_id = getPOST('category_id');
         $creat_at = $update_at = date('Y-m-d H:s:i');
-        if(!empty($title)&&!empty($price)&&!empty($discount)&&!empty($day)&&!empty($thumbnail)){
+        if(!empty($title)||!empty($price)||!empty($discount)||!empty($day)||!empty($thumbnail)){
             $sql = "insert into tour(category_id,title,price,discount,thumbnail,day,description,creat_at,update_at) values ('$category_id','$title','$price','$discount','$thumbnail','$day','$description','$creat_at','$update_at')";
             execute($sql);
             echo"<script>alert('Thêm thành công')</script>";
